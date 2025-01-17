@@ -1,0 +1,37 @@
+version: 2
+
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - binary: kredens
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+
+archives:
+  - format: tar.gz
+    name_template: >-
+      {{ .ProjectName }}_
+      {{- title .Os }}_
+      {{- if eq .Arch "amd64" }}x86_64
+      {{- else }}{{ .Arch }}{{ end }}
+    
+brews:
+  - repository:
+      owner: arturtamborski
+      name: tap
+      token: "{{ .Env.GITHUB_TOKEN }}"
+    homepage: "https://github.com/arturtamborski/kredens"
+    description: "Simple CLI tool to manage environment credentials"
+    license: "XD"
+    test: |
+      system "#{bin}/kredens", "help"
+    install: |
+      bin.install "kredens"

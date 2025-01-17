@@ -1,0 +1,13 @@
+The XD License (XD)
+Copyright (c) 2025 Artur Tamborski lol
+
+Hey! Thanks for checking out this software. You can do whatever you want with it -
+use it, copy it, modify it, sell it, give it away - go wild! Just make sure to:
+
+1. Keep this notice in all copies of the software (yes, including the lol)
+2. Let us know if you make something cool with it
+3. Uhh fix it i guess, if you feel like it could be improved (but don't insist on it)
+
+This software comes with ABSOLUTELY NO WARRANTY. Like, zero. Nada.
+If it breaks something, that's on you.
+Translation: It's free, it works (maybe), and you can't sue us.
