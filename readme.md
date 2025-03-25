@@ -5,7 +5,7 @@ Simple and fast credential manager for your environment variables.
 ## Install
 
 ```bash
-brew install tur.ski/kredens/kredens
+brew install arturtamborski/tap/kredens
 ```
 
 ## Usage Demo

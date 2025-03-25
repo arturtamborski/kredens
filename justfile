@@ -1,6 +1,9 @@
 help:
 	@just --list --unsorted
 
+lint:
+	golangci-lint run --fix
+
 build:
 	go build -v ./...
 

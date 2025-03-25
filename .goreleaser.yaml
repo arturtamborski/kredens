@@ -1,4 +1,4 @@
-version: 2
+ersion: 2
 
 before:
   hooks:
@@ -26,7 +26,7 @@ archives:
 brews:
   - repository:
       owner: arturtamborski
-      name: tap
+      name: homebrew-tap
       token: "{{ .Env.GITHUB_TOKEN }}"
     homepage: "https://github.com/arturtamborski/kredens"
     description: "Simple CLI tool to manage environment credentials"
