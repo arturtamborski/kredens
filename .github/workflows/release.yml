@@ -33,7 +33,7 @@ jobs:
 
       - uses: dawidd6/action-homebrew-bump-formula@v3
         with:
-          token: ${{ secrets.GH_TOKEN }}
-          tap: arturtamborski/tap
           formula: kredens
-          tag: ${{ github.ref_name }}
+          tap: arturtamborski/homebrew-tap
+          token: ${{ secrets.GH_TOKEN }}
+          user_email: ar@tur.ski
