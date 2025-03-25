@@ -27,7 +27,7 @@ brews:
   - repository:
       owner: arturtamborski
       name: homebrew-tap
-      token: "{{ .Env.GITHUB_TOKEN }}"
+      token: "{{ .Env.GH_TOKEN }}"
     homepage: "https://github.com/arturtamborski/kredens"
     description: "Simple CLI tool to manage environment credentials"
     license: "XD"
