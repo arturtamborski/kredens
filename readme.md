@@ -25,9 +25,6 @@ GITHUB_TOKEN
 # Get a specific value
 $ kredens get AWS_KEY
 AKIAXXXXXXX
-# Or shorter:
-$ kredens AWS_KEY
-AKIAXXXXXXX
 
 # List all credentials
 $ kredens list
