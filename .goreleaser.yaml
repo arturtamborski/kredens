@@ -1,4 +1,4 @@
-ersion: 2
+version: 2
 
 before:
   hooks:
@@ -22,12 +22,12 @@ archives:
       {{- title .Os }}_
       {{- if eq .Arch "amd64" }}x86_64
       {{- else }}{{ .Arch }}{{ end }}
-    
+
 brews:
   - repository:
       owner: arturtamborski
       name: homebrew-tap
-      token: "{{ .Env.GITHUB_TOKEN }}"
+      token: "{{ .Env.GH_PAT }}"
     homepage: "https://github.com/arturtamborski/kredens"
     description: "Simple CLI tool to manage environment credentials"
     license: "XD"
