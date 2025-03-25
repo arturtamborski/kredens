@@ -16,7 +16,7 @@ builds:
       - arm64
 
 archives:
-  - format: tar.gz
+  - formats: [zip]
     name_template: >-
       {{ .ProjectName }}_
       {{- title .Os }}_
