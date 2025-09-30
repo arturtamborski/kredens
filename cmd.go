@@ -32,7 +32,7 @@ func initDB() error {
 }
 
 func listCmd(mode int) error {
-	rows, err := db.Query("SELECT key, value FROM kredens")
+	rows, err := db.Query("SELECT key, value FROM kredens ORDER BY key")
 	if err != nil {
 		return err
 	}
@@ -103,7 +103,7 @@ func delCmd(key string) error {
 }
 
 func sourceCmd() error {
-	rows, err := db.Query("SELECT key, value FROM kredens")
+	rows, err := db.Query("SELECT key, value FROM kredens ORDER BY key")
 	if err != nil {
 		return err
 	}
