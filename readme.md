@@ -16,6 +16,10 @@ $ kredens set AWS_KEY AKIAXXXXXXX
 $ kredens set AWS_SECRET xxxxxxxxxxx
 $ kredens set GITHUB_TOKEN ghp_xxxxxxxx
 
+# store things from stdin
+$ echo secret | kredens set SECRET
+$ pbpaste | kredens set GITLAB_TOKEN
+
 # List all keys
 $ kredens keys
 AWS_KEY
@@ -52,12 +56,12 @@ $ kredens del AWS_KEY
 kredens [command] [args...]
 
 Commands:
-  list          List all credentials
-  keys          List all keys
-  vals          List all values
-  get KEY       Show value for KEY
-  set KEY VAL   Store KEY with value VAL
-  del KEY       Delete KEY
-  source        Output credentials as export statements
-  help          Show this help message
+  list           List all credentials
+  keys           List all keys
+  vals           List all values
+  get KEY        Show value for KEY
+  set KEY [VAL]  Store KEY with value VAL. Reads STDIN if VAL is empty
+  del KEY        Delete KEY
+  source         Output credentials as export statements
+  help           Show this help message
 ```

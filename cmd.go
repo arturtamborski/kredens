@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
+	"os"
 
 	_ "modernc.org/sqlite"
 )
@@ -75,6 +76,13 @@ func getCmd(key string) error {
 }
 
 func setCmd(key, value string) error {
+	if value == "" {
+		stat, _ := os.Stdin.Stat()
+		if (stat.Mode() & os.ModeCharDevice) == 0 {
+			fmt.Scanln(&value)
+		}
+	}
+
 	query := `INSERT OR REPLACE INTO kredens (key, value) VALUES (?, ?)`
 	_, err := db.Exec(query, key, value)
 	if err != nil {
@@ -123,14 +131,14 @@ func sourceCmd() error {
 func helpCmd() error {
 	fmt.Println("Usage: kredens [command] [args...]")
 	fmt.Println("\nCommands:")
-	fmt.Println("  list          List all credentials")
-	fmt.Println("  keys          List all keys")
-	fmt.Println("  vals          List all values")
-	fmt.Println("  get KEY       Show value for KEY")
-	fmt.Println("  set KEY VAL   Store KEY with value VAL")
-	fmt.Println("  del KEY       Delete KEY")
-	fmt.Println("  source        Output credentials as export statements")
-	fmt.Println("  help          Show this help message")
+	fmt.Println("  list           List all credentials")
+	fmt.Println("  keys           List all keys")
+	fmt.Println("  vals           List all values")
+	fmt.Println("  get KEY        Show value for KEY")
+	fmt.Println("  set KEY [VAL]  Store KEY with value VAL. Reads STDIN if VAL is empty")
+	fmt.Println("  del KEY        Delete KEY")
+	fmt.Println("  source         Output credentials as export statements")
+	fmt.Println("  help           Show this help message")
 
 	return nil
 }

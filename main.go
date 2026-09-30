@@ -57,9 +57,10 @@ func handleArgs() error {
 		return getCmd(args[1])
 
 	case "set":
-		if len(args) != 3 {
-			return errors.New("usage: kredens set KEY VALUE")
+		if len(args) < 2 || len(args) > 3 {
+			return errors.New("usage: kredens set KEY [VALUE]")
 		}
+		args := append(args, "")
 		return setCmd(args[1], args[2])
 
 	case "del":
